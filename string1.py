@@ -33,7 +33,11 @@ Github: TimeApollo
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    return 'Number of donuts: many' if count >= 10 else 'Number of donuts: ' + str(count)
+    """returns number of donuts. if 10 or more returns many"""
+    if count >= 10:
+        return 'Number of donuts: many'
+    else:
+        return  'Number of donuts: ' + str(count)
 
 
 # B. both_ends
@@ -42,6 +46,7 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
+    """returns first 2 characters and last 2 characters in single string if string is longer than 1 character"""
     return '' if len(s) < 2 else s[:2] + s[-2:]
 
 
@@ -55,6 +60,7 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
+    """returns string with * replacing every instance of the first character after the first character"""
     return s[0] + s.replace(s[0] , '*')[1:]
 
 
@@ -66,6 +72,7 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
+    """swaps first 2 characters of words"""
     return b[0:2] + a[2:] + ' ' + a[0:2] + b[2:]
 
 

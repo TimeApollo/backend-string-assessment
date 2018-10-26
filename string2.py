@@ -30,7 +30,7 @@ Github: TimeApollo
 def verbing(s):
     if len(s) < 3:
         return s
-    elif s[-3:] == 'ing':
+    elif s.endswith('ing'):
         return s + 'ly'
     else:
         return s + 'ing'
@@ -61,8 +61,14 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    a_half_length = len(a) / 2 if len(a) % 2 == 0 else len(a) / 2 + 1
-    b_half_length = len(b) / 2 if len(b) % 2 == 0 else len(b) / 2 + 1
+    if len(a) % 2 == 0:
+        a_half_length = len(a) / 2 
+    else:
+        a_half_length = len(a) / 2 + 1
+    if len(b) % 2 == 0:
+        b_half_length = len(b) / 2 
+    else:
+        b_half_length = len(b) / 2 + 1
     return a[:a_half_length] + b[:b_half_length] + a[a_half_length:] + b[b_half_length:]
 
 
